@@ -19,11 +19,72 @@ void Swaper::Type_Backspace()
 		0);
 }
 
+void Swaper::Ctrl_C()
+{ // C = 0x43; LCtrl = 0xA2
+	// Simulate a LCtrl press
+
+	keybd_event(0xA2,
+		0xA2,
+		KEYEVENTF_EXTENDEDKEY | 0,
+		0);
+	// Simulate a C press
+	keybd_event(0x43,
+		0xA2,
+		KEYEVENTF_EXTENDEDKEY | 0,
+		0);
+	// Simulate a C release
+	keybd_event(0x43,
+		0xA2,
+		KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP,
+		0);
+
+	Sleep(1);
+
+	// Simulate a LCtrl release
+	keybd_event(0xA2,
+		0xA2,
+		KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP,
+		0);
+}
+
+void Swaper::Copy_Back()
+{
+	this->Ctrl_C();
+	this->Type_Backspace();
+}
+
+void Swaper::Type_Changed_Text()
+{
+
+}
+
+void Swaper::Switch_Language()
+{
+	int lang = LOWORD(GetKeyboardLayout(::GetCurrentThreadId()));
+
+	if (lang == RUS)
+	{
+		PostMessage(GetForegroundWindow(), WM_INPUTLANGCHANGEREQUEST,
+			INPUTLANGCHANGE_SYSCHARSET, ENG);
+		lang = ENG;
+	}
+	else
+	{
+		PostMessage(GetForegroundWindow(), WM_INPUTLANGCHANGEREQUEST,
+			INPUTLANGCHANGE_SYSCHARSET, RUS);
+		lang = RUS;
+	}
+	
+}
+
 void Swaper::Swap_Text(std::string& text)
 {
 	const int &length = text.size();
-	this->Type_Backspace();
+	//this->Copy_Back();
+	this->Switch_Language();
 }
+
+
 
 std::string Swaper::GetText()
 {
@@ -66,6 +127,12 @@ std::string Swaper::GetText()
 	delete hData;
 
 	return text;
+}
+
+Swaper::Swaper()
+{
+	this->layout = GetKeyboardLayout(0);
+	//std::cout << this->layout;
 }
 
 Swaper::~Swaper()
