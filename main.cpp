@@ -9,12 +9,11 @@ int main()
 {
 	setlocale(LC_ALL,"RU");
 	Swaper obj_main;
-	std::string main_text = "testing";
 	try
 	{
 		while (true)
 		{
-			obj_main.Swap_Text(main_text);
+			obj_main.Swap_Text();
 			if (obj_main.Text_Swaped())
 				Sleep(500);
 			else
@@ -25,11 +24,6 @@ int main()
 	{
 		std::cout << "Something went wrong!";
 	}
-
-
-	//char a;
-	//std::cin >> a;
-	//std::cout << (int)a;
 
 	return 0;
 }

@@ -51,7 +51,7 @@ private:
 
 public:
 	// Function
-	void Swap_Text(std::string& text);
+	void Swap_Text();
 	// Accessors
 	std::string GetText();
 	bool Text_Swaped();
