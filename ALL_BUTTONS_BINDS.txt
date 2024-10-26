@@ -1,1 +1,21 @@
-JEEZ!
+your bind:
+{
+LCTRL_LALT
+}
+
+------------------------------
+
+basic bind: LCTRL_LALT
+
+all bind buttons combinations:
+
+
+
+LALT_LCTRL,		 (Left Alt + Left Control)
+LCTRL_LALT,		 (Left Control + Left Alt)
+LCTRL_RALT,		 (Left Control + Right Alt)
+RALT_LCTRL,		 (Right Alt + Left Control)
+LALT_RALT,		 (Left Alt + Right Alt)
+LCTRL_RCTRL,	 (Left Control  + Right Control) 
+RCTRL_LALT,		 (Right Alt + Left Alt)
+RCTRL_RALT.		 (Right Alt + Right Alt)

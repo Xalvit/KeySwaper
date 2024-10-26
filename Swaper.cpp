@@ -1,5 +1,275 @@
 #include "Swaper.h"
 
+int Swaper::GetBind()
+{
+
+	std::string bind_name;
+	std::string bind_str;
+
+	short start_of_bind_name = 13;
+	short end_of_bind_name = start_of_bind_name;
+
+	std::ifstream binds_file("ALL_BUTTONS_BINDS.txt");
+
+	std::ostringstream ss;
+
+	if (!binds_file.is_open())
+		throw -1;
+
+	ss << binds_file.rdbuf();
+	binds_file.close();
+
+	bind_str = ss.str();
+
+	for (short i = 13;;++i)
+	{
+		if (bind_str[i] != '\n')
+		{
+			end_of_bind_name += 1;
+		}
+		else
+			break;
+	}
+
+	for (int i = 13; i < end_of_bind_name; i++)
+	{
+		bind_name += bind_str[i];
+	}
+
+	return this->Bind_Checker(bind_name);
+}
+
+bool Swaper::HotKeyPressed()
+{
+	switch (this->GetBind())
+	{
+	// LALT_LCTRL
+	case 1:
+	{
+		if (GetAsyncKeyState(LALT) & 0x8000)
+			this->LALT_b = true;
+		else
+			this->LALT_b = false;
+
+		if (GetAsyncKeyState(LCTRL) & 0x8000)
+			this->LCTRL_b = true;
+		else
+			this->LCTRL_b = false;
+
+		if (this->LALT_b && this->LCTRL_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// LCTRL_LALT
+	case 2:
+	{
+		if (GetAsyncKeyState(LCTRL) & 0x8000)
+			this->LCTRL_b = true;
+		else
+			this->LCTRL_b = false;
+
+		if (GetAsyncKeyState(LALT) & 0x8000)
+			this->LALT_b = true;
+		else
+			this->LALT_b = false;
+
+		if (this->LCTRL_b && this->LALT_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// LCTRL_RALT
+	case 3:
+	{
+		if (GetAsyncKeyState(LCTRL) & 0x8000)
+			this->LCTRL_b = true;
+		else
+			this->LCTRL_b = false;
+
+		if (GetAsyncKeyState(RALT) & 0x8000)
+			this->RALT_b = true;
+		else
+			this->RALT_b = false;
+
+		if (this->LCTRL_b && this->RALT_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// RALT_LCTRL
+	case 4:
+	{
+		if (GetAsyncKeyState(RALT) & 0x8000)
+			this->RALT_b = true;
+		else
+			this->RALT_b = false;
+
+		if (GetAsyncKeyState(LCTRL) & 0x8000)
+			this->LCTRL_b = true;
+		else
+			this->LCTRL_b = false;
+
+		if (this->RALT_b && this->LCTRL_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// LALT_RALT
+	case 5:
+	{
+		if (GetAsyncKeyState(LALT) & 0x8000)
+			this->LALT_b = true;
+		else
+			this->LALT_b = false;
+
+		if (GetAsyncKeyState(RALT) & 0x8000)
+			this->RALT_b = true;
+		else
+			this->RALT_b = false;
+
+		if (this->LALT_b && this->RALT_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// LCTRL_RCTRL
+	case 6:
+	{
+		if (GetAsyncKeyState(LCTRL) & 0x8000)
+			this->LCTRL_b = true;
+		else
+			this->LCTRL_b = false;
+
+		if (GetAsyncKeyState(RCTRL) & 0x8000)
+			this->RCTRL_b = true;
+		else
+			this->RCTRL_b = false;
+
+		if (this->LCTRL_b && this->RCTRL_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// RCTRL_LALT
+	case 7:
+	{
+		if (GetAsyncKeyState(RCTRL) & 0x8000)
+			this->RCTRL_b = true;
+		else
+			this->RCTRL_b = false;
+
+		if (GetAsyncKeyState(LALT) & 0x8000)
+			this->LALT_b = true;
+		else
+			this->LALT_b = false;
+
+		if (this->RCTRL_b && this->LALT_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// RCTRL_RALT
+	case 8:
+	{
+		if (GetAsyncKeyState(RCTRL) & 0x8000)
+			this->RCTRL_b = true;
+		else
+			this->RCTRL_b = false;
+
+		if (GetAsyncKeyState(RALT) & 0x8000)
+			this->RALT_b = true;
+		else
+			this->RALT_b = false;
+
+		if (this->RCTRL_b && this->RALT_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	default:
+		{
+			return false;
+			break;
+		}
+	}
+}
+
+int Swaper::Bind_Checker(std::string& name)
+{
+	if (name == "LALT_LCTRL")
+		return LALT_LCTRL;
+
+	if (name == "LCTRL_LALT")
+		return LCTRL_LALT;
+
+	if (name == "LCTRL_RALT")
+		return LCTRL_RALT;
+
+	if (name == "RALT_LCTRL")
+		return RALT_LCTRL;
+
+	if (name == "LALT_RALT")
+		return LALT_RALT;
+
+	if (name == "LCTRL_RCTRL")
+		return LCTRL_RCTRL;
+
+	if (name == "RCTRL_LALT")
+		return RCTRL_LALT;
+
+	if (name == "RCTRL_RALT")
+		return RCTRL_RALT;
+}
+
 void Swaper::Type_Backspace()
 {
 
@@ -60,19 +330,18 @@ void Swaper::Type_Changed_Text()
 
 void Swaper::Switch_Language()
 {
-	int lang = LOWORD(GetKeyboardLayout(::GetCurrentThreadId()));
 
-	if (lang == RUS)
+	if (this->lang == RUS)
 	{
 		PostMessage(GetForegroundWindow(), WM_INPUTLANGCHANGEREQUEST,
 			INPUTLANGCHANGE_SYSCHARSET, ENG);
-		lang = ENG;
+		this->lang = ENG;
 	}
 	else
 	{
 		PostMessage(GetForegroundWindow(), WM_INPUTLANGCHANGEREQUEST,
 			INPUTLANGCHANGE_SYSCHARSET, RUS);
-		lang = RUS;
+		this->lang = RUS;
 	}
 	
 }
@@ -80,8 +349,14 @@ void Swaper::Switch_Language()
 void Swaper::Swap_Text(std::string& text)
 {
 	const int &length = text.size();
-	//this->Copy_Back();
-	this->Switch_Language();
+
+	this->GetBind();
+	if (this->HotKeyPressed())
+	{
+		//this->Copy_Back();
+		this->Switch_Language();
+		this->Type_Changed_Text();
+	}
 }
 
 
@@ -129,10 +404,17 @@ std::string Swaper::GetText()
 	return text;
 }
 
+bool Swaper::Text_Swaped()
+{
+	if (this->HotKeyPressed())
+		return true;
+	else
+		return false;
+}
+
 Swaper::Swaper()
 {
-	this->layout = GetKeyboardLayout(0);
-	//std::cout << this->layout;
+
 }
 
 Swaper::~Swaper()

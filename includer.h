@@ -4,6 +4,7 @@
 
 #include <windows.h>
 #include <string>
+#include <sstream>
 #include <fstream>
 
 // include other files

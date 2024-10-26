@@ -1,5 +1,6 @@
 ﻿  Swaper.cpp
-C:\Users\Xalvi\source\repos\KeySwap\Swaper.cpp(82,20): warning C4267: инициализация: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\Xalvi\source\repos\KeySwap\Swaper.cpp(351,20): warning C4267: инициализация: преобразование из "size_t" в "const int"; возможна потеря данных
   main.cpp
   Создание кода...
+C:\Users\Xalvi\source\repos\KeySwap\Swaper.cpp(271,1): warning C4715: Swaper::Bind_Checker: значение возвращается не при всех путях выполнения
   KeySwap.vcxproj -> C:\Users\Xalvi\source\repos\KeySwap\x64\Debug\KeySwap.exe
