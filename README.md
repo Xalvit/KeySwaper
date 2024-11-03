@@ -1,7 +1,10 @@
 # KeySwaper
 
 Thank you for testing!
+------------------------------------
+
 Tell me personally if you find bugs!
+------------------------------------
 
 # How to use KeySwaper
 
