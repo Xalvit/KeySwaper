@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <WinUser.h>
 
 // include other files
 
@@ -14,4 +15,4 @@
 
 // includes for tests or smth else...
 
-#include <iostream>
+//#include <iostream>

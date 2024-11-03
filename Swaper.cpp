@@ -1,5 +1,408 @@
 #include "Swaper.h"
 
+int Swaper::Get_Key_Code(const char& symb)
+{   
+	switch (symb)
+	{
+
+	// rus keyboard
+
+	case 'æ':
+	{
+		return 0xBA;
+		break;
+	}
+	case 'ý':
+	{
+		return 0xDE;
+		break;
+	}
+	case 'õ':
+	{
+		return 0xDB;
+		break;
+	}
+	case 'ú':
+	{
+		return 0xDD;
+		break;
+	}
+	case '¸':
+	{
+		return 0xC0;
+		break;
+	}
+	case 'á':
+	{
+		return 0xBC;
+		break;
+	}
+	case 'þ':
+	{
+		return 0xBE;
+		break;
+	}
+	case 'ô':
+	{
+		return 0x41;
+		break;
+	}
+	case 'è':
+	{
+		return 0x42;
+		break;
+	}
+	case 'ñ':
+	{
+		return 0x43;
+		break;
+	}
+	case 'â':
+	{
+		return 0x44;
+		break;
+	}
+	case 'ó':
+	{
+		return 0x45;
+		break;
+	}
+	case 'à':
+	{
+		return 0x46;
+		break;
+	}
+	case 'ï':
+	{
+		return 0x47;
+		break;
+	}
+	case 'ð':
+	{
+		return 0x48;
+		break;
+	}
+	case 'ø':
+	{
+		return 0x49;
+		break;
+	}
+	case 'î':
+	{
+		return 0x4A;
+		break;
+	}
+	case 'ë':
+	{
+		return 0x4B;
+		break;
+	}
+	case 'ä':
+	{
+		return 0x4C;
+		break;
+	}
+	case 'ü':
+	{
+		return 0x4D;
+		break;
+	}
+	case 'ò':
+	{
+		return 0x4E;
+		break;
+	}
+	case 'ù':
+	{
+		return 0x4F;
+		break;
+	}
+	case 'ç':
+	{
+		return 0x50;
+		break;
+	}
+	case 'é':
+	{
+		return 0x51;
+		break;
+	}
+	case 'ê':
+	{
+		return 0x52;
+		break;
+	}
+	case 'û':
+	{
+		return 0x53;
+		break;
+	}
+	case 'å':
+	{
+		return 0x54;
+		break;
+	}
+	case 'ã':
+	{
+		return 0x55;
+		break;
+	}
+	case 'ì':
+	{
+		return 0x56;
+		break;
+	}
+	case 'ö':
+	{
+		return 0x57;
+		break;
+	}
+	case '÷':
+	{
+		return 0x58;
+		break;
+	}
+	case 'í':
+	{
+		return 0x59;
+		break;
+	}
+	case 'ÿ':
+	{
+		return 0x5A;
+		break;
+	}
+
+	// eng keyboard
+
+	case ';':
+	{
+		return 0xBA;
+		break;
+	}
+	case '\'':
+	{
+		return 0xDE;
+		break;
+	}
+	case'[':
+	{
+		return 0xDB;
+		break;
+	}
+	case ']':
+	{
+		return 0xDD;
+		break;
+	}
+	case '`':
+	{
+		return 0xC0;
+		break;
+	}
+	case ',':
+	{
+		return 0xBC;
+		break;
+	}
+	case '.':
+	{
+		return 0xBE;
+		break;
+	}
+	case ' ':
+	{
+		return 0x20;
+		break;
+	}
+	case 'a':
+	{
+		return 0x41;
+		break;
+	}
+	case 'b':
+	{
+		return 0x42;
+		break;
+	}
+	case 'c':
+	{
+		return 0x43;
+		break;
+	}
+	case 'd':
+	{
+		return 0x44;
+		break;
+	}
+	case 'e':
+	{
+		return 0x45;
+		break;
+	}
+	case 'f':
+	{
+		return 0x46;
+		break;
+	}
+	case 'g':
+	{
+		return 0x47;
+		break;
+	}
+	case 'h':
+	{
+		return 0x48;
+		break;
+	}
+	case 'i':
+	{
+		return 0x49;
+		break;
+	}
+	case 'j':
+	{
+		return 0x4A;
+		break;
+	}
+	case 'k':
+	{
+		return 0x4B;
+		break;
+	}
+	case 'l':
+	{
+		return 0x4C;
+		break;
+	}
+	case 'm':
+	{
+		return 0x4D;
+		break;
+	}
+	case 'n':
+	{
+		return 0x4E;
+		break;
+	}
+	case 'o':
+	{
+		return 0x4F;
+		break;
+	}
+	case 'p':
+	{
+		return 0x50;
+		break;
+	}
+	case 'q':
+	{
+		return 0x51;
+		break;
+	}
+	case 'r':
+	{
+		return 0x52;
+		break;
+	}
+	case 's':
+	{
+		return 0x53;
+		break;
+	}
+	case 't':
+	{
+		return 0x54;
+		break;
+	}
+	case 'u':
+	{
+		return 0x55;
+		break;
+	}
+	case 'v':
+	{
+		return 0x56;
+		break;
+	}
+	case 'w':
+	{
+		return 0x57;
+		break;
+	}
+	case 'x':
+	{
+		return 0x58;
+		break;
+	}
+	case 'y':
+	{
+		return 0x59;
+		break;
+	}
+	case 'z':
+	{
+		return 0x5A;
+		break;
+	}
+	case '0':
+	{
+		return 0x30;
+		break;
+	}
+	case '1':
+	{
+		return 0x31;
+		break;
+	}
+	case '2':
+	{
+		return 0x32;
+		break;
+	}
+	case '3':
+	{
+		return 0x33;
+		break;
+	}
+	case '4':
+	{
+		return 0x34;
+		break;
+	}
+	case '5':
+	{
+		return 0x35;
+		break;
+	}
+	case '6':
+	{
+		return 0x36;
+		break;
+	}
+	case '7':
+	{
+		return 0x37;
+		break;
+	}
+	case '8':
+	{
+		return 0x38;
+		break;
+	}
+	case '9':
+	{
+		return 0x39;
+		break;
+	}
+	default:
+	{
+		return -1;
+		break;
+	}
+	}
+}
+
 int Swaper::GetBind()
 {
 
@@ -35,7 +438,6 @@ int Swaper::GetBind()
 	{
 		bind_name += bind_str[i];
 	}
-
 	return this->Bind_Checker(bind_name);
 }
 
@@ -67,32 +469,8 @@ bool Swaper::HotKeyPressed()
 			break;
 		}
 	}
-	// LCTRL_LALT
-	case 2:
-	{
-		if (GetAsyncKeyState(LCTRL) & 0x8000)
-			this->LCTRL_b = true;
-		else
-			this->LCTRL_b = false;
-
-		if (GetAsyncKeyState(LALT) & 0x8000)
-			this->LALT_b = true;
-		else
-			this->LALT_b = false;
-
-		if (this->LCTRL_b && this->LALT_b)
-		{
-			return true;
-			break;
-		}
-		else
-		{
-			return false;
-			break;
-		}
-	}
 	// LCTRL_RALT
-	case 3:
+	case 2:
 	{
 		if (GetAsyncKeyState(LCTRL) & 0x8000)
 			this->LCTRL_b = true;
@@ -115,32 +493,8 @@ bool Swaper::HotKeyPressed()
 			break;
 		}
 	}
-	// RALT_LCTRL
-	case 4:
-	{
-		if (GetAsyncKeyState(RALT) & 0x8000)
-			this->RALT_b = true;
-		else
-			this->RALT_b = false;
-
-		if (GetAsyncKeyState(LCTRL) & 0x8000)
-			this->LCTRL_b = true;
-		else
-			this->LCTRL_b = false;
-
-		if (this->RALT_b && this->LCTRL_b)
-		{
-			return true;
-			break;
-		}
-		else
-		{
-			return false;
-			break;
-		}
-	}
 	// LALT_RALT
-	case 5:
+	case 3:
 	{
 		if (GetAsyncKeyState(LALT) & 0x8000)
 			this->LALT_b = true;
@@ -164,7 +518,7 @@ bool Swaper::HotKeyPressed()
 		}
 	}
 	// LCTRL_RCTRL
-	case 6:
+	case 4:
 	{
 		if (GetAsyncKeyState(LCTRL) & 0x8000)
 			this->LCTRL_b = true;
@@ -188,7 +542,7 @@ bool Swaper::HotKeyPressed()
 		}
 	}
 	// RCTRL_LALT
-	case 7:
+	case 5:
 	{
 		if (GetAsyncKeyState(RCTRL) & 0x8000)
 			this->RCTRL_b = true;
@@ -212,7 +566,7 @@ bool Swaper::HotKeyPressed()
 		}
 	}
 	// RCTRL_RALT
-	case 8:
+	case 6:
 	{
 		if (GetAsyncKeyState(RCTRL) & 0x8000)
 			this->RCTRL_b = true;
@@ -235,6 +589,126 @@ bool Swaper::HotKeyPressed()
 			break;
 		}
 	}
+	// LSHIFT_LCTRL
+	case 7:
+	{
+		if (GetAsyncKeyState(LSHIFT) & 0x8000)
+			this->LSHIFT_b = true;
+		else
+			this->LSHIFT_b = false;
+
+		if (GetAsyncKeyState(LCTRL) & 0x8000)
+			this->LCTRL_b = true;
+		else
+			this->LCTRL_b = false;
+
+		if (this->LSHIFT_b && this->LCTRL_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// LSHIFT_RCTRL
+	case 8:
+	{
+		if (GetAsyncKeyState(LSHIFT) & 0x8000)
+			this->LSHIFT_b = true;
+		else
+			this->LSHIFT_b = false;
+
+		if (GetAsyncKeyState(RCTRL) & 0x8000)
+			this->RCTRL_b = true;
+		else
+			this->RCTRL_b = false;
+
+		if (this->LSHIFT_b && this->RCTRL_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// RSHIFT_LCTRL
+	case 9:
+	{
+		if (GetAsyncKeyState(RSHIFT) & 0x8000)
+			this->RSHIFT_b = true;
+		else
+			this->RSHIFT_b = false;
+
+		if (GetAsyncKeyState(LCTRL) & 0x8000)
+			this->LCTRL_b = true;
+		else
+			this->LCTRL_b = false;
+
+		if (this->RSHIFT_b && this->LCTRL_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// RSHIFT_RCTRL
+	case 10:
+	{
+		if (GetAsyncKeyState(RSHIFT) & 0x8000)
+			this->RSHIFT_b = true;
+		else
+			this->RSHIFT_b = false;
+
+		if (GetAsyncKeyState(RCTRL) & 0x8000)
+			this->RCTRL_b = true;
+		else
+			this->RCTRL_b = false;
+
+		if (this->RSHIFT_b && this->RCTRL_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
+	// RSHIFT_RALT
+	case 11:
+	{
+		if (GetAsyncKeyState(RSHIFT) & 0x8000)
+			this->RSHIFT_b = true;
+		else
+			this->RSHIFT_b = false;
+
+		if (GetAsyncKeyState(RALT) & 0x8000)
+			this->RALT_b = true;
+		else
+			this->RALT_b = false;
+
+		if (this->RSHIFT_b && this->RALT_b)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			return false;
+			break;
+		}
+	}
 	default:
 		{
 			return false;
@@ -245,17 +719,11 @@ bool Swaper::HotKeyPressed()
 
 int Swaper::Bind_Checker(std::string& name)
 {
-	if (name == "LALT_LCTRL")
-		return LALT_LCTRL;
-
 	if (name == "LCTRL_LALT")
-		return LCTRL_LALT;
+		return LALT_LCTRL;
 
 	if (name == "LCTRL_RALT")
 		return LCTRL_RALT;
-
-	if (name == "RALT_LCTRL")
-		return RALT_LCTRL;
 
 	if (name == "LALT_RALT")
 		return LALT_RALT;
@@ -268,6 +736,21 @@ int Swaper::Bind_Checker(std::string& name)
 
 	if (name == "RCTRL_RALT")
 		return RCTRL_RALT;
+
+	if (name == "LSHIFT_LCTRL")
+		return LSHIFT_LCTRL;
+
+	if (name == "LSHIFT_RCTRL")
+		return LSHIFT_RCTRL;
+
+	if (name == "RSHIFT_LCTRL")
+		return RSHIFT_LCTRL;
+
+	if (name == "RSHIFT_RCTRL")
+		return RSHIFT_RCTRL;
+
+	if (name == "RSHIFT_RALT")
+		return RSHIFT_RALT;
 }
 
 void Swaper::Type_Backspace()
@@ -325,41 +808,51 @@ void Swaper::Copy_Back()
 
 void Swaper::Type_Changed_Text()
 {
+	std::string bufferText = this->GetText();
+	int keyCode = 0;
+	int wait_time = 100;
 
+	for (int i = 0; i < bufferText.size(); ++i)
+	{
+		keyCode = this->Get_Key_Code(bufferText[i]);
+
+		if (keyCode != -1)
+		{
+			Sleep(wait_time);
+			wait_time = 0;
+
+			// Simulate a button press
+			keybd_event(keyCode,
+				keyCode,
+				KEYEVENTF_EXTENDEDKEY | 0,
+				0);
+
+			// Simulate a button release
+			keybd_event(keyCode,
+				keyCode,
+				KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP,
+				0);
+		}
+
+	}
+	wait_time = 100;
 }
 
 void Swaper::Switch_Language()
 {
-
 	if (this->lang == RUS)
 	{
 		PostMessage(GetForegroundWindow(), WM_INPUTLANGCHANGEREQUEST,
 			INPUTLANGCHANGE_SYSCHARSET, ENG);
 		this->lang = ENG;
 	}
-	else
+	else if (this->lang == ENG)
 	{
 		PostMessage(GetForegroundWindow(), WM_INPUTLANGCHANGEREQUEST,
 			INPUTLANGCHANGE_SYSCHARSET, RUS);
 		this->lang = RUS;
 	}
-	
 }
-
-void Swaper::Swap_Text(std::string& text)
-{
-	const int &length = text.size();
-
-	this->GetBind();
-	if (this->HotKeyPressed())
-	{
-		//this->Copy_Back();
-		this->Switch_Language();
-		this->Type_Changed_Text();
-	}
-}
-
-
 
 std::string Swaper::GetText()
 {
@@ -397,11 +890,18 @@ std::string Swaper::GetText()
 
 	// Close buffer
 	CloseClipboard();
-
-	delete pszText;
-	delete hData;
-
 	return text;
+}
+
+void Swaper::Swap_Text()
+{
+	//this->GetBind();
+	if (this->HotKeyPressed())
+	{
+		this->Copy_Back();
+		this->Switch_Language();
+		this->Type_Changed_Text();
+	 }	
 }
 
 bool Swaper::Text_Swaped()

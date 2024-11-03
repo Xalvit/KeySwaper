@@ -1,21 +1,22 @@
 your bind:
 {
-LCTRL_LALT
+LCTRL_RCTRL
 }
 
 ------------------------------
 
-basic bind: LCTRL_LALT
+basic bind: LSHIFT_LCTRL
 
 all bind buttons combinations:
 
-
-
-LALT_LCTRL,		 (Left Alt + Left Control)
-LCTRL_LALT,		 (Left Control + Left Alt)
-LCTRL_RALT,		 (Left Control + Right Alt)
-RALT_LCTRL,		 (Right Alt + Left Control)
-LALT_RALT,		 (Left Alt + Right Alt)
-LCTRL_RCTRL,	 (Left Control  + Right Control) 
-RCTRL_LALT,		 (Right Alt + Left Alt)
-RCTRL_RALT.		 (Right Alt + Right Alt)
+LCTRL_LALT,		 (Left Control + Left Alt) / (Left Alt + Left Control)
+LCTRL_RALT,		 (Left Control + Right Alt) / (Right Alt + Left Control)
+LALT_RALT,		 (Left Alt + Right Alt) / (Right Alt + Left Alt)
+LCTRL_RCTRL,	 (Left Control  + Right Control) / (Right Control + Left Control)
+RCTRL_LALT,		 (Right Alt + Left Alt) / (Left Alt + Right Alt)
+RCTRL_RALT,		 (Right Alt + Right Alt) / (Right Alt + Right Alt)
+LSHIFT_LCTRL,	 (Left Shift + Left Control) / (Left Control + Left Shift)
+LSHIFT_RCTRL,    (Left Shift + Right Control) / (Right Control + Left Shift)
+RSHIFT_LCTRL,	 (Right Shift + Left Control) / (Left Control + Right Shift)
+RSHIFT_RCTRL,	 (Right Shift + Right Control) / (Right Control + Right Shift)
+RSHIFT_RALT.	 (Right Shift + Right Alt) / (Right Alt + Right Shift)
